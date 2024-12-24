@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { SignInFlow } from "../types";
