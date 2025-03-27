@@ -17,7 +17,7 @@ const Toolbar = () => {
       </div>
       <div className="ml-auto  flex-1 flex items-center justify-end">
         <Button variant="transparent" size="iconSm">
-          <Info className="size-5 text-white"/>
+          <Info className="size-5 text-white" />
         </Button>
       </div>
     </nav>

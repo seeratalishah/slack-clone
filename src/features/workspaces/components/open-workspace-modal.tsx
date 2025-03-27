@@ -21,7 +21,9 @@ import {
 export const OpenWorkSpaceModal = () => {
   const [open, setOpen] = useOpenWorkspaceModal();
   const router = useRouter();
-  const [selectedWorkspace, setSelectedWorkspace] = useState<string | null>(null);
+  const [selectedWorkspace, setSelectedWorkspace] = useState<string | null>(
+    null
+  );
 
   const workspaces = [
     { id: "1", name: "Muslim Hands" },

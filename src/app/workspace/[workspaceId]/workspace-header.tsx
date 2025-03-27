@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Hint from "@/components/hint";
 import { Button } from "@/components/ui/button";
@@ -23,8 +23,17 @@ const WorkspaceHeader = ({ workspace }: WorkspaceHeaderProps) => {
   const [openInvite, setOpenInvite] = useState(false);
   return (
     <>
-      <InviteModal open={openInvite} setOpen={setOpenInvite} name="Muslim Hands" joinCode="1234"/>
-      <PreferencesModal open={openPreferences} setOpen={setOpenPreferences} initialValue="Muslim Hands" />
+      <InviteModal
+        open={openInvite}
+        setOpen={setOpenInvite}
+        name="Muslim Hands"
+        joinCode="1234"
+      />
+      <PreferencesModal
+        open={openPreferences}
+        setOpen={setOpenPreferences}
+        initialValue="Muslim Hands"
+      />
       <div className="flex items-center justify-between px-4 h-[49px] gap-0.5">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -50,11 +59,17 @@ const WorkspaceHeader = ({ workspace }: WorkspaceHeaderProps) => {
               </div>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="cursor-pointer py-2" onClick={() => setOpenInvite(true)}>
+            <DropdownMenuItem
+              className="cursor-pointer py-2"
+              onClick={() => setOpenInvite(true)}
+            >
               Invite people to workspace
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="cursor-pointer py-2" onClick={() => setOpenPreferences(true)}>
+            <DropdownMenuItem
+              className="cursor-pointer py-2"
+              onClick={() => setOpenPreferences(true)}
+            >
               Preferences
             </DropdownMenuItem>
           </DropdownMenuContent>

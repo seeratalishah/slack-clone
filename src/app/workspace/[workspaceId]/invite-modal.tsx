@@ -27,9 +27,9 @@ const InviteModal = ({ open, setOpen, name, joinCode }: InviteModalProps) => {
   };
 
   const handleNewCode = () => {
-    console.log("Api call to generate new code")
-  }
-  
+    console.log("Api call to generate new code");
+  };
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent>

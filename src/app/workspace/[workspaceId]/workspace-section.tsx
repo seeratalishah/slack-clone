@@ -28,7 +28,9 @@ const WorkspaceSection = ({
           className="p-0.5 text-sm text-[#f9edffcc] shrink-0 size-6"
           onClick={toggle}
         >
-          <FaCaretDown className={cn("size-4 transition-transform", on && "-rotate-90")} />
+          <FaCaretDown
+            className={cn("size-4 transition-transform", on && "-rotate-90")}
+          />
         </Button>
         <Button
           variant="transparent"
@@ -50,7 +52,7 @@ const WorkspaceSection = ({
           </Hint>
         )}
       </div>
-      { on && children}
+      {on && children}
     </div>
   );
 };

@@ -48,14 +48,24 @@ export const Toolbar = ({
         )}
         {isAuthor && (
           <Hint label="Edit Message">
-            <Button variant="ghost" size="iconSm" disabled={isPending} onClick={handleEdit}>
+            <Button
+              variant="ghost"
+              size="iconSm"
+              disabled={isPending}
+              onClick={handleEdit}
+            >
               <Pencil className="size-4" />
             </Button>
           </Hint>
         )}
         {isAuthor && (
           <Hint label="Delete Message">
-            <Button variant="ghost" size="iconSm" disabled={isPending} onClick={handleDelete}>
+            <Button
+              variant="ghost"
+              size="iconSm"
+              disabled={isPending}
+              onClick={handleDelete}
+            >
               <Trash className="size-4" />
             </Button>
           </Hint>

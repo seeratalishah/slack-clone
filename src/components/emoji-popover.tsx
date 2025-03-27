@@ -28,9 +28,9 @@ const EmojiPopover = ({
     setPopoverOpen(false);
 
     setTimeout(() => {
-        setTooltipOpen(false);
+      setTooltipOpen(false);
     }, 500);
-  }
+  };
   return (
     <TooltipProvider>
       <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>

@@ -18,11 +18,29 @@ const WorkspaceSidebar = () => {
         <SidebarItem label="Threads" icon={MessageSquareText} id="threads" />
         <SidebarItem label="Drafts & Sent" icon={SendHorizonal} id="drafts" />
       </div>
-      <WorkspaceSection label="Channels" hint="New Channel" onNew={() => setOpen(true)}>
-        <SidebarItem label="General" icon={HashIcon} id="general" variant={channelId === 1 ? "active" : "default"} />
-        <SidebarItem label="Normal" icon={HashIcon} id="normal" variant={channelId === 2 ? "active" : "default"}/>
+      <WorkspaceSection
+        label="Channels"
+        hint="New Channel"
+        onNew={() => setOpen(true)}
+      >
+        <SidebarItem
+          label="General"
+          icon={HashIcon}
+          id="general"
+          variant={channelId === 1 ? "active" : "default"}
+        />
+        <SidebarItem
+          label="Normal"
+          icon={HashIcon}
+          id="normal"
+          variant={channelId === 2 ? "active" : "default"}
+        />
       </WorkspaceSection>
-      <WorkspaceSection label="Direct Messages" hint="New direct Message" onNew={() => {}}>
+      <WorkspaceSection
+        label="Direct Messages"
+        hint="New direct Message"
+        onNew={() => {}}
+      >
         <UserItem label="Seerat Ali" />
       </WorkspaceSection>
     </div>
