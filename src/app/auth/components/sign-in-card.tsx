@@ -8,18 +8,49 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { SignInFlow } from "../types";
+import { loginRequest, msalConfig } from "../../../../msalConfig";
+import { PublicClientApplication } from "@azure/msal-browser";
 
 interface SignInCardProps {
   setState: (state: SignInFlow) => void;
 }
 
+const msalInstance = new PublicClientApplication(msalConfig);
+
 const SignInCard = ({ setState }: SignInCardProps) => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false); // Track loading state
+
+  useEffect(() => {
+    // Ensure initialization is complete
+    msalInstance.initialize().catch((error) => {
+      console.error("MSAL initialization failed:", error);
+    });
+  }, []);
+
+  const handleLogin = async () => {
+    if (loading) {
+      console.log("Login is already in progress...");
+      return; // Prevent multiple logins at the same time
+    }
+
+    try {
+      setLoading(true); // Set loading state to true while logging in
+      const loginResponse = await msalInstance.loginPopup(loginRequest);
+      console.log("Login Successful!", loginResponse);
+      // You can handle post-login logic here, like saving tokens
+    } catch (error) {
+      console.error("Login Failed!", error);
+    } finally {
+      setLoading(false); // Reset loading state
+    }
+  };
+
   return (
     <Card className="h-full w-full p-8">
       <CardHeader className="px-0 pt-0">
@@ -53,24 +84,24 @@ const SignInCard = ({ setState }: SignInCardProps) => {
         <Separator />
         <div className="flex flex-col gap-y-2.5">
           <Button
-            disabled={false}
-            onClick={() => {}}
+            disabled={loading} // Disable button while login is in progress
+            onClick={handleLogin}
             variant="outline"
             size="lg"
             className="w-full relative"
           >
             <FcGoogle className="absolute top-3.5 left-3.5" />
-            Continue with Google
+            {loading ? "Logging in..." : "Continue with Google"}
           </Button>
           <Button
-            disabled={false}
+            disabled={loading}
             onClick={() => {}}
             variant="outline"
             size="lg"
             className="w-full relative"
           >
             <FaGithub className="absolute top-3.5 left-3.5" />
-            Continue with Github
+            {loading ? "Logging in..." : "Continue with Github"}
           </Button>
         </div>
         <p className="text-xs text-muted-foreground">

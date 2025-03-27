@@ -11,7 +11,7 @@ const sidebarItemVariants = cva("flex item-center justify-start gap-1.5 font-nor
         variants: {
             variant: {
                 default: "text-[#f9edffcc]",
-                active: "text-[#481349] bg-white/90",
+                active: "text-[#0297b1] bg-white/90",
             },
         },
         defaultVariants: {

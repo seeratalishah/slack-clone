@@ -12,7 +12,7 @@ const WorkspaceSidebar = () => {
   const [_open, setOpen] = useCreateChannelModal();
   const channelId = 1;
   return (
-    <div className="flex flex-col h-full bg-[#5E2C5F]">
+    <div className="flex flex-col h-full bg-[#03abc9]">
       <WorkspaceHeader workspace="Muslim Hands" />
       <div className="flex flex-col px-2 mt-3">
         <SidebarItem label="Threads" icon={MessageSquareText} id="threads" />

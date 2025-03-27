@@ -123,3 +123,8 @@ body {
   font-style: normal !important;
   @apply truncate; 
 }
+
+.messages-scroll{
+  scrollbar-width: thin;
+  scrollbar-color: #dcdcdc #f8f8f8;
+}
